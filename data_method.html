@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./dist/vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+        <br>
+        {{age}}
+    </div>
+    <script>
+        var data = { name: "hali", age: 1 }
+        var vm = new Vue({
+            el: "#app",
+            data: data
+        })
+        data.age = 2;
+        vm.$watch("name", function (newVal, oldVal) {
+            console.log("old val : " + oldVal);
+            console.log("new val : " + newVal);
+        })
+        vm.$data.name = 'pan pan';
+        vm.$data.age = 3;
+        // data.age = x 与 vm.$data.age = x效果相同，$data用以区分
+        // Object.freeze(objName) 可以取消对象的动态响应
+    </script>
+</body>
+
+</html>
