@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./dist/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>message: {{message}}</span>
+        <br>
+        <!-- v-once保证只赋值一次，message变化时页面显示不会变化 -->
+        <span v-once>once message: {{message}}</span>
+        <h4>using as string variable: </h4>
+        <p>{{rawHtml}}</p>
+        <h4>using as DOM content: </h4>
+        <p v-html="rawHtml"></p>
+        <!-- 属性绑定变量 -->
+        <div v-bind:class="divColor">variable for attribute</div>
+        <!-- 数学运算 -->
+        {{number + 1}}
+        <!-- 三元运算 -->
+        <p>{{1 == 1 ? "YES" : "NO"}}</p>
+        <p>{{flag ? "Y" : "N"}}</p>
+        <!-- 行内函数 -->
+        <p>{{words.split('').reverse().join('')}}</p>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                message: "some message",
+                rawHtml: '<span style="color: red;">the paragraph is red</span>',
+                divColor: 'warm',
+                number: 10,
+                flag: 1,
+                words: "vue"
+            },
+        });
+        vm.message = "some new message";
+        setTimeout(function () {
+            vm.divColor = "cold"
+        }, 3000);
+    </script>
+    <style type="text/css">
+        .warm {
+            color: purple
+        }
+
+        .cold {
+            color: navy;
+            font-size: 30px;
+        }
+    </style>
+</body>
+
+</html>
