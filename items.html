@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./dist/vue.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item,index in items">
+                {{index}} - {{item.message}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="field_value,key in row">
+                {{key}} - {{field_value}}
+            </li>
+        </ul>
+    </div>
+    </div>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                items: [
+                    { message: "hello" },
+                    { message: "world" },
+                    { message: "vue" }
+                ],
+                row: {
+                    title: "vue",
+                    author: "someone",
+                    publishedAt: "2012-05-21"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
