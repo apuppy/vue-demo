@@ -19,6 +19,7 @@
       </li>
     </ul>
     <router-view></router-view>
+    <AjaxDemo></AjaxDemo>
   </div>
 </template>
 
@@ -26,13 +27,15 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import Hey from "./components/Hey.vue";
 import login from "./components/login.vue";
+import AjaxDemo from "./components/AjaxDemo";
 
 export default {
   name: "App",
   components: {
     HelloWorld,
     Hey,
-    login
+    login,
+    AjaxDemo
   },
   mounted() {
     console.log(this.$route);
