@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
+    <!-- <img alt="Vue logo" src="./assets/logo.png" /> -->
     <HelloWorld msg="Welcome to Vue.js App" />
     <Hey></Hey>
     <login></login>
@@ -20,6 +20,7 @@
     </ul>
     <router-view></router-view>
     <AjaxDemo></AjaxDemo>
+    <BrandAdd></BrandAdd>
   </div>
 </template>
 
@@ -28,6 +29,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Hey from "./components/Hey.vue";
 import login from "./components/login.vue";
 import AjaxDemo from "./components/AjaxDemo";
+import BrandAdd from "./components/BrandAdd";
 
 export default {
   name: "App",
@@ -35,7 +37,8 @@ export default {
     HelloWorld,
     Hey,
     login,
-    AjaxDemo
+    AjaxDemo,
+    BrandAdd
   },
   mounted() {
     console.log(this.$route);
